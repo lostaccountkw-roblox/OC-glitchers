@@ -1116,7 +1116,7 @@ local data = {
 			description = "Part Name: " .. par.Value .. "\nTested property: " .. pr.Value .. "\nOutput Value: " .. tostring(returnedpart.Value),
 			color = 4718336,
 			footer = {
-				text = "Webhook by BILLY."
+				text = "Sending by BILLY, pannel by lostaccountkw_roblox"
 			}
 		}
 	}, -- Embed here
@@ -1130,12 +1130,46 @@ local data2 = {
 			description = "Effect Name: " .. ef.Value .. "\nTested Property: " .. efpr.Value .. "\Output Value: " .. tostring(returnedeffect.Value),
 			color = 4718336,
 			footer = {
-				text = "Webhook by BILLY."
+				text = "Sending by BILLY, pannel by lostaccountkw_roblox"
 			}
 		}
 	}, -- Embed here
 	attachments = {}
 }
+
+coroutine.resume(coroutine.create(function()
+	while wait() do
+		data = {
+			content = "REQUEST FROM GLITCHED PARTS PANNEL (PART)", -- Message here
+			embeds = {
+				{
+					title = game.Players.LocalPlayer.Name .. " Tried This Part:",
+					description = "Part Name: " .. par.Value .. "\nTested property: " .. pr.Value .. "\Output Value: " .. returnedpart.Value,
+					color = 4718336,
+					footer = {
+						text = "Sending by BILLY, pannel by lostaccountkw_roblox"
+					}
+				}
+			}, -- Embed here
+			attachments = {}
+		}
+		data2 = {
+			content = "REQUEST FROM GLITCHED PARTS PANNEL (EFFECT)", -- Message here
+			embeds = {
+				{
+					title = game.Players.LocalPlayer.Name .. " Tried This Effect:",
+					description = "Effect Name: " .. ef.Value .. "\nTested Property: " .. efpr.Value .. "\Output Value: " .. returnedeffect.Value,
+					color = 4718336,
+					footer = {
+						text = "Sending by BILLY, pannel by lostaccountkw_roblox"
+					}
+				}
+			}, -- Embed here
+			attachments = {}
+		}
+	end
+end)
+	
 local encodepart  = game:GetService("HttpService"):JSONEncode(data)
 local encodeeffect  = game:GetService("HttpService"):JSONEncode(data2)
 
